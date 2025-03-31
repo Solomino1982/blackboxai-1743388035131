@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review | Fasosam Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-yellow-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-seedling text-2xl"></i>
+                <h1 class="text-2xl font-bold">Fasosam Enterprise</h1>
+            </div>
+            <a href="index.html" class="hover:underline">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Review Content -->
+    <div class="container mx-auto py-12 px-4">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-yellow-500 py-4 px-6">
+                <h2 class="text-2xl font-bold text-white">Rate Your Experience</h2>
+            </div>
+            <form class="p-6" id="reviewForm">
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Overall Rating</label>
+                    <div class="flex justify-center space-x-2" id="starRating">
+                        <i class="far fa-star text-3xl text-gray-300 cursor-pointer" data-rating="1"></i>
+                        <i class="far fa-star text-3xl text-gray-300 cursor-pointer" data-rating="2"></i>
+                        <i class="far fa-star text-3xl text-gray-300 cursor-pointer" data-rating="3"></i>
+                        <i class="far fa-star text-3xl text-gray-300 cursor-pointer" data-rating="4"></i>
+                        <i class="far fa-star text-3xl text-gray-300 cursor-pointer" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2" for="reviewText">Your Review</label>
+                    <textarea id="reviewText" class="input-field h-32" placeholder="Share your experience with Fasosam Enterprise..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary text-white font-bold py-3 px-6 rounded-lg w-full">
+                    Submit Review
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
