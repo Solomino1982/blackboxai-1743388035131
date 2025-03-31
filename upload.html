@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Products | Fasosam Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-yellow-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-seedling text-2xl"></i>
+                <h1 class="text-2xl font-bold">Fasosam Enterprise</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="browse.html" class="hover:underline">
+                    <i class="fas fa-store mr-1"></i> Marketplace
+                </a>
+                <a href="index.html" class="hover:underline">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Upload Form -->
+    <div class="container mx-auto py-8 px-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-yellow-500 py-4 px-6">
+                <h2 class="text-2xl font-bold text-white">List Your Cashews</h2>
+            </div>
+            <form class="p-6" id="productForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="variety">Cashew Variety</label>
+                        <select id="variety" class="input-field" required>
+                            <option value="">Select variety</option>
+                            <option value="raw">Raw Cashews</option>
+                            <option value="processed">Processed Cashews</option>
+                            <option value="organic">Organic Cashews</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="quality">Quality Grade</label>
+                        <select id="quality" class="input-field" required>
+                            <option value="">Select grade</option>
+                            <option value="A">Grade A (Premium)</option>
+                            <option value="B">Grade B (Standard)</option>
+                            <option value="C">Grade C (Economy)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="price">Price per kg ($)</label>
+                        <input type="number" id="price" class="input-field" min="0" step="0.01" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="quantity">Quantity Available (kg)</label>
+                        <input type="number" id="quantity" class="input-field" min="1" required>
+                    </div>
+                    <div class="mb-4 md:col-span-2">
+                        <label class="block text-gray-700 mb-2" for="location">Location</label>
+                        <input type="text" id="location" class="input-field" required>
+                    </div>
+                    <div class="mb-4 md:col-span-2">
+                        <label class="block text-gray-700 mb-2" for="description">Product Description</label>
+                        <textarea id="description" class="input-field h-32" required></textarea>
+                    </div>
+                    <div class="mb-4 md:col-span-2">
+                        <label class="block text-gray-700 mb-2">Product Image</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">Click to upload or drag and drop</p>
+                            <input type="file" id="productImage" class="hidden" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary text-white font-bold py-3 px-6 rounded-lg w-full mt-4">
+                    List Product
+                </button>
+            </form>
+        </div>
+
+        <!-- Seller's Listed Products -->
+        <div class="max-w-3xl mx-auto mt-8">
+            <h3 class="text-xl font-semibold mb-4">Your Listed Products</h3>
+            <div id="sellerProducts" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
